@@ -6,7 +6,7 @@ import protocol from "../constants/protocol.json";
 import { useEffect, useState } from "react";
 import { useAccount, useReadContracts, useWriteContract } from "wagmi";
 
-export default function Page() {
+export default function Borrow() {
   const { address } = useAccount();
   const [nfts, setNFTs] = useState<
     { address: string; tokenID: number; name: string; image: string }[]
