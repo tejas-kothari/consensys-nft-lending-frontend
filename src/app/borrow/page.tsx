@@ -42,7 +42,7 @@ export default function Borrow() {
   });
 
   useEffect(() => {
-    if (ownersFetch.status === "success") {
+    if (ownersFetch.status === "success" && address !== undefined) {
       const owners = ownersFetch.data.map((v) => v.result);
       setNFTs(
         initialNfts.filter((element, index) => owners[index] === address)
