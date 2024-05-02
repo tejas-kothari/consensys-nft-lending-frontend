@@ -205,7 +205,7 @@ export default function Lend() {
       <Modal
         open={openModal}
         title={`Offer ${loanRequests[selectedRequest]?.denom?.symbol} loan for ${loanRequests[selectedRequest]?.name} #${loanRequests[selectedRequest]?.tokenID}`}
-        onOk={() => offerLoan()}
+        onOk={() => offerLoan().then((_) => setOpenModal(false))}
         // confirmLoading={confirmLoading}
         onCancel={() => setOpenModal(false)}
       >
