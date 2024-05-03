@@ -146,6 +146,10 @@ export default function Lend() {
         BigInt(duration),
       ],
     });
+
+    const storedLenders = JSON.parse(localStorage.getItem("lenders") ?? "{}");
+    storedLenders[address!] = true;
+    localStorage.setItem("lenders", JSON.stringify(storedLenders));
   };
 
   const loanRequestsFetch = useReadContracts({
